@@ -4,7 +4,10 @@ const Restaurant = require("../models/index")
 const db = require("../db/connection");
 
 //TODO: Create your GET Request Route Below: 
-
+app.get("/restaurants", async function(req,res) {
+    const restaurantsReturn = await Restaurant.findAll();
+    res.send(res.json(restaurantsReturn));
+})
 
 
 
